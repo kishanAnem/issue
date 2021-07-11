@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model issue.Controllers.UserDto
+
+<div>
+    <h1 class="display-4">Sandbox</h1>
+    <p>This sandbox should give you a quick view of a basic MVC application.</p>
+
+    <form asp-controller="Home" asp-action="Index" method="post">
+   
+    <label asp-for="Location"></label>
+    @*<input asp-for="Location" /><br />
+    <label asp-for="Location"></label>
+    <input asp-for="Location" /><br />
+    <label asp-for="Location"></label>
+    <input asp-for="Location" /><br />*@
+
+    <input type="text" id="Location" name="Location[0]" value="f">
+    <input type="text" id="Location" name="Location[1]" value="f1">
+    <input type="text" id="Location" name="Location[2]" value="f2">
+    <button type="submit">Post</button>
+</form>
+
+    @foreach(var loc in Model.Location)
+    {
+        <div>@loc</div>
+    }
+</div>
